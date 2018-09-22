@@ -1,2 +1,2 @@
-# super-super-heroku-bot
-Bot using heroku, 24/7!
+# Totocptbgn's Discord Bot !
+A simple bot I made for fun...
