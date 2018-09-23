@@ -17,7 +17,7 @@ client.on('message', message => {
         "color": 12390624,
         "footer": {
           "icon_url": message.author.avatarURL,
-          "text": "[.about] requested by " + message.author.username +" at " + message.createdAt + "."
+          "text": ".about requested by " + message.author.username +"."
         },
         "fields": [
           {
