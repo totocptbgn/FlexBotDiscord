@@ -64,7 +64,7 @@ client.on('message', message => {
       message.delete()
         .then(message => console.log(`Deleted message and replied in DM to ${message.author.username} at ${message.guild.name} in ${message.channel.name}`))
         .catch(console.error);
-      message.author.send("You can only use music command in " + message.channel.name + " !");
+      message.author.send("Envoie les messages dans :loudspeaker:, que des commandes peuvent être rentrées dans :cd: !");
       console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
     }
   }
@@ -74,7 +74,7 @@ client.on('message', message => {
       message.delete()
         .then(message => console.log(`Deleted message and replied in DM to ${message.author.username} at ${message.guild.name} in ${message.channel.name}`))
         .catch(console.error);
-      message.author.send("You can only use music command in " + message.channel.name + " !");
+      message.author.send("La commande `" + message.content + "` doit être écrite dans :cd: !");
       console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
     }
   }
