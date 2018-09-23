@@ -1,31 +1,4 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const { Client, RichEmbed } = require('discord.js');
-const prefix = ".";
-//const ownerID = "";
-
-
-
-client.on('ready', () => {
-  console.log("⚡⚡⚡ Bot deployed succesfully and ready to work. ⚡⚡⚡");
-});
-
-client.on('message', message => {
-
-  let args  = message.content.slice(prefix.length).trim().split(' ');
-  let cmd = args.shift().toLowerCase();
-
-  //if (mesage.author.bot) return;
-  if (!message.content.startWith(prefix)) return;
-
-try {
-  let commandFile = require(`./commands/${cmd}.js`);
-  commandFile.run(client, message, args);
-} catch (e) {
-  console.log(e.stack);
-}
-
-/*
+exports.run = async (client, message, args, ops) => {
   // ABOUT
   if (message.content === prefix + 'about') {
     message.channel.send({
@@ -56,23 +29,4 @@ try {
       .then(msg => console.log(`Deleted message and replied .about to ${msg.author.username} at ${msg.guild.name} in ${msg.channel.name}`))
       .catch(console.error);
   }
-
-  //  HI
-  if (message.content === prefix + 'hi') {
-    message.channel.send("Hi, " + message.author.toString() + ". :smile:")
-    .then(msg => console.log(`Replied hi to ${msg.author.username} in ${msg.guild.name}`))
-    .catch(console.error);
-  }
-
-  // COMMANDS
-  if (message.content === prefix + 'commands') {
-    message.channel.send("Sorry " + message.author.toString() + ", but `.commands` is unavailaible at the time... :confused:")
-    .then(msg => console.log(`Replied hi to ${msg.author.username} in ${msg.guild.name}`))
-    .catch(console.error);
-  }
- */
-
-});
-
-
-client.login(process.env.BOT_TOKEN);
+}
