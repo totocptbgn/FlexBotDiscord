@@ -4,6 +4,7 @@ const { Client, RichEmbed } = require('discord.js');
 
 client.on('ready', () => {
   console.log("⚡⚡⚡ Bot deployed succesfully and ready to work. ⚡⚡⚡");
+  client.user.setGame('Rainbow Six Siege')
 });
 
 client.on('message', message => {
@@ -26,7 +27,7 @@ client.on('message', message => {
           },
           {
             "name": "Add it to another server !",
-            "value": "If you want to add the bot to your Discord server, click [`here`](https://discordapp.com/oauth2/authorize?client_id=493100279902896139&scope=bot&permissions=0) !"
+            "value": "If you want to add the bot to your Discord server, click [`here`](https://discordapp.com/oauth2/authorize?client_id=493100279902896139&scope=bot&permissions=8) !"
           },
           {
             "name": "Commands :",
