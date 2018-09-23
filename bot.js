@@ -60,7 +60,7 @@ client.on('message', message => {
 
   // GUS server no music
   if (message.content === prefix + 'test') {
-    if (message.channel.id === 458358688021741579) {
+    if (message.channel.id === "458358688021741579") {
       message.channel.send("Ok " + message.author.toString() + ", don't fuck with the Gus's Music channel !")
       console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
     } else {
