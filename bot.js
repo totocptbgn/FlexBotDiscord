@@ -12,6 +12,7 @@ client.on('ready', () => {
 
 client.on('message', message => {
 
+  prefix = ".";
   let args  = message.content.slice(prefix.length).trim().split(' ');
   let cmd = args.shift().toLowerCase();
 
