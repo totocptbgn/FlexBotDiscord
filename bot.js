@@ -24,7 +24,9 @@ client.on('message', message => {
 
   //  HI
   if (message.content === prefix + 'hi') {
-    message.channel.send("Hi, " + message.author.toString() + ".");
+    message.channel.send("Hi, " + message.author.toString() + ".")
+    .then(msg => console.log(`Replied hi to ${msg.author.username}`))
+    .catch(console.error);
   }
 
 });
