@@ -18,14 +18,14 @@ client.on('message', message => {
       .setDescription("I'm a bot created by totoLeFlex#9103.\n Use the prefix '.' to use me.\n List of the command :\n - .about\n - .hi");
     message.channel.send(embed);
     message.delete()
-      .then(msg => console.log(`Deleted message from ${msg.author.username}`))
+      .then(msg => console.log(`Deleted message from ${msg.author.username} in ${msg.guild.name}`))
       .catch(console.error);
   }
 
   //  HI
   if (message.content === prefix + 'hi') {
     message.channel.send("Hi, " + message.author.toString() + ".")
-    .then(msg => console.log(`Replied hi to ${msg.author.username}`))
+    .then(msg => console.log(`Replied hi to ${msg.author.username} in ${msg.guild.name}`))
     .catch(console.error);
   }
 
