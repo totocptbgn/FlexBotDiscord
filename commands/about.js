@@ -1,5 +1,6 @@
 exports.run = async (client, message, args, ops) => {
   // ABOUT
+  var prefix = ".";
   if (message.content === prefix + 'about') {
     message.channel.send({
       "embed": {

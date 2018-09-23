@@ -16,7 +16,7 @@ client.on('message', message => {
   let cmd = args.shift().toLowerCase();
 
   //if (mesage.author.bot) return;
-  if (!message.content.startsWith(".")) return;
+  if (!message.content.startsWith(prefix)) return;
 
 try {
   let commandFile = require(`./commands/${cmd}.js`);
