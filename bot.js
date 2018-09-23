@@ -61,7 +61,10 @@ client.on('message', message => {
   // GUS Serveur, Only Music Command
   if (message.channel.id === "458358688021741579" && message.author.bot === false) {
     if (!(message.content.charAt(0) === '!')) {
-      message.channel.send(message.author.toString() + ", command only in " + message.channel.name + " !");
+      message.delete()
+        .then(message => console.log(`Deleted message and replied in DM to ${message.author.username} at ${message.guild.name} in ${message.channel.name}`))
+        .catch(console.error);
+      message.author.dmChannel.send(message.author.toString() + ", command only in " + message.channel.name + " !");
       console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
     }
   }
