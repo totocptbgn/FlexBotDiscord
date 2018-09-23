@@ -79,6 +79,12 @@ client.on('message', message => {
     }
   }
 
+  if(message.content === prefix + "say4659") {
+    var sayMessage =  message.content.slice(5);
+    message.delete().catch(O_o=>{});
+    message.channel.send(sayMessage);
+  }
+
 });
 
 client.login(process.env.BOT_TOKEN);
