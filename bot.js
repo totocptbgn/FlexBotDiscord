@@ -36,21 +36,21 @@ client.on('message', message => {
       }
     });
     message.delete()
-      .then(msg => console.log(`Deleted message and replied .about to ${msg.author.username} at ${msg.guild.name} in ${msg.channel.name}`))
+      .then(message => console.log(`Deleted message and replied .about to ${message.author.username} at ${message.guild.name} in ${message.channel.name}`))
       .catch(console.error);
   }
 
   //  HI
   if (message.content === prefix + 'hi') {
     message.channel.send("Hi, " + message.author.toString() + ". :smile:")
-    .then(msg => console.log(`Replied hi to ${msg.author.username} in ${msg.guild.name}`))
+    .then(message => console.log(`Replied hi to ${message.author.username} in ${message.guild.name}`))
     .catch(console.error);
   }
 
   // COMMANDS
   if (message.content === prefix + 'commands') {
     message.channel.send("Sorry " + message.author.toString() + ", but `.commands` is unavailaible at the time... :confused:");
-    console.log(`Replied hi to ${msg.author.username} in ${msg.guild.name}`);
+    console.log(`Replied hi to ${message.author.username} in ${message.guild.name}`);
   }
 });
 
