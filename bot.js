@@ -43,13 +43,18 @@ client.on('message', message => {
   //  HI
   if (message.content === prefix + 'hi') {
     message.channel.send("Hi, " + message.author.toString() + ". :smile:")
-    .then(message => console.log(`Replied hi to ${message.author.username} in ${message.guild.name}`))
-    .catch(console.error);
+    console.log(`Replied hi to ${message.author.username} in ${message.guild.name}`);
   }
 
   // COMMANDS
   if (message.content === prefix + 'commands') {
     message.channel.send("Sorry " + message.author.toString() + ", but `.commands` is unavailaible at the time... :confused:");
+    console.log(`Replied hi to ${message.author.username} in ${message.guild.name}`);
+  }
+
+  // TEST
+  if (message.content === prefix + 'test') {
+    message.channel.send("Ok " + message.author.toString() + ", the Channel Id is " + message.channel.id + " !")
     console.log(`Replied hi to ${message.author.username} in ${message.guild.name}`);
   }
 });
