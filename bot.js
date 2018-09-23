@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const { Client, RichEmbed } = require('discord.js');
 
 client.on('ready', () => {
-  console.log("Bot deployed succesfully and ready to work.");
+  console.log("⚡⚡⚡ Bot deployed succesfully and ready to work. ⚡⚡⚡");
 });
 
 client.on('message', message => {
@@ -17,7 +17,7 @@ client.on('message', message => {
         "color": 12390624,
         "footer": {
           "icon_url": message.author.avatarURL,
-          "text": "`.about` requested by " + message.author.username +"."
+          "text": "[.about] requested by " + message.author.username +" at " + message.editedAt.toTimeString() + "."
         },
         "fields": [
           {
