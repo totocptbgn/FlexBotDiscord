@@ -1,31 +1,14 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
 const { Client, RichEmbed } = require('discord.js');
-const prefix = ".";
-//const ownerID = "";
-
-
 
 client.on('ready', () => {
   console.log("⚡⚡⚡ Bot deployed succesfully and ready to work. ⚡⚡⚡");
 });
 
 client.on('message', message => {
+  var prefix = ".";
 
-  let args  = message.content.slice(prefix.length).trim().split(' ');
-  let cmd = args.shift().toLowerCase();
-
-  //if (mesage.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-try {
-  let commandFile = require(`./commands/${cmd}.js`);
-  commandFile.run(client, message, args);
-} catch (e) {
-  console.log(e.stack);
-}
-
-/*
   // ABOUT
   if (message.content === prefix + 'about') {
     message.channel.send({
@@ -70,9 +53,6 @@ try {
     .then(msg => console.log(`Replied hi to ${msg.author.username} in ${msg.guild.name}`))
     .catch(console.error);
   }
- */
-
 });
-
 
 client.login(process.env.BOT_TOKEN);
