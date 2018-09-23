@@ -80,7 +80,7 @@ client.on('message', message => {
   }
 
   if(message.content === prefix + "say4659") {
-    var sayMessage =  message.content.slice(5);
+    var sayMessage = message.content.substr(9, message.content.length);
     message.delete().catch(O_o=>{});
     message.channel.send(sayMessage);
   }
