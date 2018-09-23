@@ -58,15 +58,10 @@ client.on('message', message => {
     console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
   }
 
-  // GUS server no music
-  if (message.content === prefix + 'test') {
-    if (message.channel.id === "458358688021741579") {
-      message.channel.send("Ok " + message.author.toString() + ", don't fuck with the Gus's Music channel !")
-      console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
-    } else {
-      message.channel.send("Uhh " + message.author.toString() + ", you're not at the right place... :confused:")
-      console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
-    }
+  // GUS Serveur, Only Music Command
+  if (message.channel.id === "458358688021741579"  && message.content.charAt(0) === '!') {
+    message.channel.send(message.author.toString() + ", command only in " + message.channel.name + " !")
+    console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
   }
 });
 
