@@ -2,7 +2,7 @@ const ytdl = require('ytdl-core');
 
 exports.run = async (client, message, args, ops) => {
   // MUSIC
-  if (!message.author.voiceChannel) return message.channel.send("Sorry " + message.author.toString() + ", but your are not in a voice channel :confused:");
+  if (!message.member.voiceChannel) return message.channel.send("Sorry " + message.author.toString() + ", but your are not in a voice channel :confused:");
   if (!message.guild.me.voiceChannel) return message.channel.send("Sorry " + message.author.toString() + ", I'm already connected to the voice channel ! :thinking:");
   if (!args[0]) return message.channel.send("Sorry " + message.author.toString() + ", please put a valid URL ! :thinking:");
   let validate = await ytdl.validateURL(args[0]);
