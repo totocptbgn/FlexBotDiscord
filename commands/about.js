@@ -1,7 +1,4 @@
 exports.run = async (client, message, args, ops) => {
-  // ABOUT
-  var prefix = ".";
-  if (message.content === prefix + 'about') {
     message.channel.send({
       "embed": {
         "title": ":fox:",
@@ -29,5 +26,4 @@ exports.run = async (client, message, args, ops) => {
     message.delete()
       .then(msg => console.log(`Deleted message and replied .about to ${msg.author.username} at ${msg.guild.name} in ${msg.channel.name}`))
       .catch(console.error);
-  }
 }
