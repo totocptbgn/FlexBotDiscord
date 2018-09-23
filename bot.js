@@ -15,7 +15,7 @@ client.on('message', message => {
       .setTitle('About :')
       .setColor(0x61039A)
       .setTimestamp()
-      .setDescription("I'm a bot created by totoLeFlex#9103.\n Use the prefix '.' to use me.\n List of the command :\n - .about\n - .hi\n - .tg");
+      .setDescription("I'm a bot created by totoLeFlex#9103.\n Use the prefix '.' to use me.\n List of the command :\n - .about\n - .hi");
     message.channel.send(embed);
     message.delete()
       .then(msg => console.log(`Deleted message from ${msg.author.username}`))
