@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const { Client, RichEmbed } = require('discord.js');
 
 client.on('ready', () => {
-  console.log("Done.");
+  console.log("Bot deployed succesfully and ready to work.");
 });
 
 client.on('message', message => {
@@ -11,12 +11,30 @@ client.on('message', message => {
 
   // ABOUT
   if (message.content === prefix + 'about') {
-    const embed = new RichEmbed()
-      .setTitle('About :')
-      .setColor(0x61039A)
-      .setTimestamp()
-      .setDescription("I'm a bot created by totoLeFlex#9103.\n Use the prefix '.' to use me.\n List of the command :\n - .about\n - .hi");
-    message.channel.send(embed);
+    message.channel.send({
+      "embed": {
+        "title": " ⚡ Who am I ?",
+        "color": 12390624,
+        "footer": {
+          "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
+          "text": "About requested by TotoleFlex"
+        },
+        "fields": [
+          {
+            "name": "About me :",
+            "value": "A simple Discord bot created by [`TotoLeFlex`](https://github.com/totocptbgn). The code is availaible on [GitHub](https://github.com/totocptbgn/TotoBotFriend/blob/master/bot.js). The bot use the [Node.js](https://nodejs.org/) and [Discord.js](https://discord.js.org/) modules."
+          },
+          {
+            "name": "Add it to another server !",
+            "value": "If you want to add the bot to your Discord server, click [`here`](https://discordapp.com/oauth2/authorize?client_id=493100279902896139&scope=bot&permissions=0) !"
+          },
+          {
+            "name": "Commands :",
+            "value": "To use the bot, use the `.` prefix. Type `.commands` to get the list of the commands."
+          }
+        ]
+      }
+    });
     message.delete()
       .then(msg => console.log(`Deleted message from ${msg.author.username} in ${msg.guild.name}`))
       .catch(console.error);
