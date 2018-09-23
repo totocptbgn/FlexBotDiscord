@@ -16,8 +16,8 @@ client.on('message', message => {
         "title": " ⚡ Who am I ?",
         "color": 12390624,
         "footer": {
-          "icon_url": "https://cdn.discordapp.com/embed/avatars/0.png",
-          "text": "About requested by TotoleFlex"
+          "icon_url": message.author.avatarURL,
+          "text": "About requested by " + message.author.toString
         },
         "fields": [
           {
