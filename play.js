@@ -1,5 +1,4 @@
 const ytdl = require('ytdl-core');
-var opus = require('node-opus');
 
 exports.run = async (client, message, args, ops) => {
   // MUSIC
