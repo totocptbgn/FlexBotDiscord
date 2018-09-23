@@ -27,21 +27,6 @@ client.on('message', message => {
     message.channel.send("Hi, " + message.author.toString() + ".");
   }
 
-  // TG
-  if (message.content === prefix + 'tg') {
-    message.delete()
-      .then(msg => console.log(`Deleted message from ${msg.author.username}`))
-      .catch(console.error);
-    message.channel.send("Ferme ta gueule ! :joy:");
-  }
-
-  if (message.content === prefix + 'testGit2') {
-    message.delete()
-      .then(msg => console.log(`Deleted message from ${msg.author.username}`))
-      .catch(console.error);
-    message.channel.send("Le Bot à bien été mis à jour pars GitHub.");
-  }
-
 });
 
 client.login(process.env.BOT_TOKEN);
