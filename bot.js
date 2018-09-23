@@ -57,14 +57,14 @@ client.on('message', message => {
     message.channel.send("Ok " + message.author.toString() + ", the text channel Id is " + message.channel.id + " !")
     console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
   }
-
+/*
   // GUS Serveur, Only Music Command
   if (message.channel.id === "458358688021741579") {
     if (!(message.content.charAt(0) === '!')) {
       message.channel.send(message.author.toString() + ", command only in " + message.channel.name + " !")
       console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
     }
-  }
+  } */
 });
 
 client.login(process.env.BOT_TOKEN);
