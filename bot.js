@@ -4,7 +4,6 @@ const { Client, RichEmbed } = require('discord.js');
 
 client.on('ready', () => {
   console.log("⚡⚡⚡ Bot deployed succesfully and ready to work. ⚡⚡⚡");
-  client.user.setGame('Rainbow Six Siege')
 });
 
 client.on('message', message => {
