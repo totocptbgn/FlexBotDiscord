@@ -35,7 +35,7 @@ client.on('message', message => {
     message.channel.send("Ferme ta gueule ! :joy:");
   }
 
-  if (message.content === prefix + 'testGit') {
+  if (message.content === prefix + 'testGit2') {
     message.delete()
       .then(msg => console.log(`Deleted message from ${msg.author.username}`))
       .catch(console.error);
