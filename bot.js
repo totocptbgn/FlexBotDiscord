@@ -59,9 +59,11 @@ client.on('message', message => {
   }
 
   // GUS Serveur, Only Music Command
-  if (message.channel.id === "458358688021741579"  && (message.content.charAt(0) === '!')) {
-    message.channel.send(message.author.toString() + ", command only in " + message.channel.name + " !")
-    console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
+  if (message.channel.id === "458358688021741579") {
+    if (!(message.content.charAt(0) === '!')) {
+      message.channel.send(message.author.toString() + ", command only in " + message.channel.name + " !")
+      console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
+    }
   }
 });
 
