@@ -13,7 +13,7 @@ client.on('message', message => {
   if (message.content === prefix + 'about') {
     message.channel.send({
       "embed": {
-        "title": " ⚡ Who am I ?",
+        "title": ":fox:",
         "color": 12390624,
         "footer": {
           "icon_url": message.author.avatarURL,
