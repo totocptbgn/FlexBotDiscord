@@ -12,12 +12,11 @@ client.on('ready', () => {
 
 client.on('message', message => {
 
-  prefix = ".";
   let args  = message.content.slice(prefix.length).trim().split(' ');
   let cmd = args.shift().toLowerCase();
 
   //if (mesage.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
+  if (!message.content.startsWith(".")) return;
 
 try {
   let commandFile = require(`./commands/${cmd}.js`);
