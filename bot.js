@@ -86,7 +86,7 @@ client.on('message', message => {
   }
 
   // Youtube Player
-  if (message.content.startsWith('!play')) {
+  if (message.content.startsWith(prefix + 'play')) {
     // On récupère le premier channel audio du serveur
     let voiceChannel = message.guild.channels
       .filter(function (channel) { return channel.type === 'voice' })
@@ -112,7 +112,7 @@ client.on('message', message => {
             connection.disconnect()
           })
       });
-
-});
+    }
+}
 
 client.login(process.env.BOT_TOKEN);
