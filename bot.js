@@ -111,7 +111,7 @@ client.on('message', message => {
           .on('end', function () {
             connection.disconnect()
           })
-      })
+      });
 
 });
 
