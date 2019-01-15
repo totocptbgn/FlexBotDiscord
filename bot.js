@@ -111,8 +111,8 @@ client.on('message', message => {
           .on('end', function () {
             connection.disconnect()
           })
-      });
-    }
+      })
+  }
 }
 
 client.login(process.env.BOT_TOKEN);
