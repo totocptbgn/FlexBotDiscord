@@ -22,7 +22,7 @@ client.on('message', message => {
         "fields": [
           {
             "name": "About me :",
-            "value": "A simple Discord bot created by [`TotoLeFlex`](https://github.com/totocptbgn). The code is availaible on [GitHub](https://github.com/totocptbgn/TotoBotFriend/blob/master/bot.js). The bot use the [Node.js](https://nodejs.org/) and [Discord.js](https://discord.js.org/) modules."
+            "value": "A simple Discord bot created by [`TotoLeFlex`](https://github.com/totocptbgn). The code is availaible on [GitHub](https://github.com/totocptbgn/FlexBotDiscord). The bot use the [Node.js](https://nodejs.org/) and [Discord.js](https://discord.js.org/) modules."
           },
           {
             "name": "Add it to another server !",
@@ -68,7 +68,6 @@ client.on('message', message => {
       console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
     }
   }
-
   if (message.channel.id === "398218860345688105" && message.author.bot === false) {
     if (message.content.charAt(0) === '!') {
       message.delete()
@@ -79,6 +78,7 @@ client.on('message', message => {
     }
   }
 
+  // SAY
   if(message.content.substr(0, 8) === prefix + "say4659") {
     var sayMessage = message.content.substr(9, message.content.length);
     message.delete().catch(O_o=>{});
