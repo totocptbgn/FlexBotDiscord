@@ -1,4 +1,4 @@
-# The FlexBot
+# ⚡️ The FlexBot
 >A simple Discord bot I made for fun...
 ## Use it !
 You can add the bot to your Discord Server [here](https://discordapp.com/oauth2/authorize?client_id=493100279902896139&scope=bot&permissions=0) !  The bot connected to this repository is host on [Heroku](https://www.heroku.com/)
