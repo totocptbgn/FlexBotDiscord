@@ -58,61 +58,14 @@ client.on('message', message => {
     console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
   }
 
-  // GUS Serveur, Only Music Command
-  if (message.channel.id === "458358688021741579" && message.author.bot === false) {
-    if (!(message.content.charAt(0) === '!')) {
-      message.delete()
-        .then(message => console.log(`Deleted message and replied in DM to ${message.author.username} at ${message.guild.name} in ${message.channel.name}`))
-        .catch(console.error);
-      message.author.send("Envoie les messages dans :loudspeaker:, que des commandes peuvent être rentrées dans :cd: !");
-      console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
-    }
-  }
-  if (message.channel.id === "398218860345688105" && message.author.bot === false) {
-    if (message.content.charAt(0) === '!') {
-      message.delete()
-        .then(message => console.log(`Deleted message and replied in DM to ${message.author.username} at ${message.guild.name} in ${message.channel.name}`))
-        .catch(console.error);
-      message.author.send("La commande `" + message.content + "` doit être écrite dans :cd: !");
-      console.log(`Replied getChannelId to ${message.author.username} in ${message.guild.name}`);
-    }
-  }
-
   // SAY
-  if(message.content.substr(0, 8) === prefix + "say4659") {
+  if(message.content.substr(0, 5) === prefix + "say ") {
     var sayMessage = message.content.substr(9, message.content.length);
     message.delete().catch(O_o=>{});
     message.channel.send(sayMessage);
   }
 
-  // Youtube Player
-  if (message.content.startsWith(prefix + 'play')) {
-    // On récupère le premier channel audio du serveur
-    let voiceChannel = message.guild.channels
-      .filter(function (channel) { return channel.type === 'voice' })
-      .first()
-    // On récupère les arguments de la commande
-    // il faudrait utiliser une expression régulière pour valider le lien youtube
-    let args = message.content.split(' ')
-    // On rejoint le channel audio
-    voiceChannel
-      .join()
-      .then(function (connection) {
-        // On démarre un stream à partir de la vidéo youtube
-        let stream = YoutubeStream(args[1])
-        stream.on('error', function () {
-          message.reply("Je n'ai pas réussi à lire cette vidéo :(")
-          connection.disconnect()
-        })
-        // On envoie le stream au channel audio
-        // Il faudrait ici éviter les superpositions (envoie de plusieurs vidéo en même temps)
-        connection
-          .playStream(stream)
-          .on('end', function () {
-            connection.disconnect()
-          })
-      })
-  }
+  require('specialServ.js');
 }
 
 client.login(process.env.BOT_TOKEN);
